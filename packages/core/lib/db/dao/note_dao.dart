@@ -1,4 +1,4 @@
-import 'package:explore_get_it/core/db/entity/note.dart';
+import 'package:core/db/entity/note.dart';
 import 'package:floor/floor.dart';
 
 @dao

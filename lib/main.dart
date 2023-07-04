@@ -1,7 +1,8 @@
+import 'package:core/di/injection.dart';
 import 'package:explore_get_it/bloc/home_bloc.dart';
-import 'package:explore_get_it/core/di/injection.dart';
-import 'package:explore_get_it/core/session/session_manager.dart';
-import 'package:explore_get_it/core/utils/constant.dart';
+import 'package:core/session/session_manager.dart';
+import 'package:core/utils/constant.dart';
+import 'package:explore_get_it/di/injection.dart';
 import 'package:explore_get_it/ui/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';

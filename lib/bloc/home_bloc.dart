@@ -1,9 +1,9 @@
-import 'package:explore_get_it/core/db/app_database.dart';
-import 'package:explore_get_it/core/db/entity/note.dart';
-import 'package:explore_get_it/core/di/injection.dart';
-import 'package:explore_get_it/core/session/session_manager.dart';
+import 'package:core/db/app_database.dart';
+import 'package:core/db/entity/note.dart';
+import 'package:core/di/injection.dart';
+import 'package:core/session/session_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
+import 'package:core/injectable.dart';
 
 @injectable
 class HomeBloc {

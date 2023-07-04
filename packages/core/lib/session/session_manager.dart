@@ -1,5 +1,5 @@
-import 'package:explore_get_it/core/session/pref_manager.dart';
-import 'package:explore_get_it/core/utils/constant.dart';
+import 'package:core/session/pref_manager.dart';
+import 'package:core/utils/constant.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
