@@ -41,7 +41,7 @@ dependencies:
   get_it_mixin:
   sqflite:
   floor:
-  floor_generator:
+  shared_preferences:
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +55,10 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner:
   injectable_generator:
+  floor_generator:
+
+  # build runner command
+  # flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

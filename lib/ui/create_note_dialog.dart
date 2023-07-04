@@ -1,11 +1,14 @@
 import 'package:explore_get_it/bloc/home_bloc.dart';
 import 'package:explore_get_it/core/di/injection.dart';
+import 'package:explore_get_it/core/lang/language_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';
 
 class CreateNoteDialog extends StatelessWidget with GetItMixin {
 
   final HomeBloc _bloc = getIt<HomeBloc>();
+
+  final LanguageFactory _language = getIt<LanguageFactory>();
 
   final Function callback;
 
@@ -15,6 +18,8 @@ class CreateNoteDialog extends StatelessWidget with GetItMixin {
   Widget build(BuildContext context) {
     final errorMessage = watchX<FormValidator, String?>((validator) => validator.error);
 
+    final langType = watchOnly<LanguageSelector, int>((selector) => selector.type);
+
     return SizedBox(
       height: 300.0,
       width: 300.0,
@@ -22,9 +27,9 @@ class CreateNoteDialog extends StatelessWidget with GetItMixin {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text(
-            "Create Note",
-            style: TextStyle(
+          Text(
+            _language.getLanguage(langType).createNote,
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
             ),
@@ -32,7 +37,7 @@ class CreateNoteDialog extends StatelessWidget with GetItMixin {
           const SizedBox(height: 12.0,),
           TextField(
             decoration: InputDecoration(
-              hintText: "Title",
+              hintText: _language.getLanguage(langType).title,
               errorText: errorMessage,
             ),
             onChanged: (value) {
@@ -41,8 +46,8 @@ class CreateNoteDialog extends StatelessWidget with GetItMixin {
           ),
           const SizedBox(height: 16.0,),
           TextField(
-            decoration: const InputDecoration(
-              hintText: "Description",
+            decoration: InputDecoration(
+              hintText: _language.getLanguage(langType).description,
             ),
             onChanged: (value) {
               _bloc.description = value;
@@ -59,7 +64,7 @@ class CreateNoteDialog extends StatelessWidget with GetItMixin {
                   }
                 },
                 icon: const Icon(Icons.add_circle),
-                label: const Text("Add note"),
+                label: Text(_language.getLanguage(langType).addNote),
               ),
             ),
           ),
